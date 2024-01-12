@@ -16,6 +16,16 @@ public class XmlServlet extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter printWriter = response.getWriter();
 		String uName = request.getParameter("userName");
+		String fName = request.getParameter("fullName");
 		printWriter.println("Hello from POST method! " + uName);
+		printWriter.println("<br>" + "Your full name is " + fName);
+		String prof = request.getParameter("profession");
+		printWriter.println("<br>" + "You are a " + prof);
+		//String loc = request.getParameter("location");
+		String[] loc = request.getParameterValues("location");
+		printWriter.println("<br>" + "You are at " + loc.length + " places ");
+		for(int i = 0; i<loc.length; i++) {
+			printWriter.println(loc[i]);
+		}
 	}
 }
