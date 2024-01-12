@@ -4,6 +4,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -12,8 +14,14 @@ public class SimpleServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Hello from GET method");
+		response.setContentType("text/html");
 		PrintWriter writer = response.getWriter();
-		writer.println("<h3>Hello in html</h3>");
+		String uName = request.getParameter("userName");
+		HttpSession session = request.getSession();
+		if(uName != "" && uName != null) {
+			session.setAttribute("savedUserName", uName);
+		}		
+		writer.println("Request parameter has username as " + uName + "<br>");
+		writer.println("Session parameter has username as " + (String)session.getAttribute("savedUserName"));
 	}
 }

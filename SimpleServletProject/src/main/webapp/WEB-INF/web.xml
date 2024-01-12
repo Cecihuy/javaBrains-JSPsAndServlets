@@ -5,12 +5,12 @@
 		 	https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
 		 id="WebApp_ID" version="6.0"
 		 >
-  <servlet>
-    <servlet-name>xmlServlet</servlet-name>
-    <servlet-class>org.koushik.javabrains.XmlServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>xmlServlet</servlet-name>
-  	<url-pattern>/xmlServletPath</url-pattern>
-  </servlet-mapping>
+<!--   <servlet> -->
+<!--     <servlet-name>xmlServlet</servlet-name> -->
+<!--     <servlet-class>org.koushik.javabrains.XmlServlet</servlet-class> -->
+<!--   </servlet> -->
+<!--   <servlet-mapping> -->
+<!--   	<servlet-name>xmlServlet</servlet-name> -->
+<!--   	<url-pattern>/xmlServletPath</url-pattern> -->
+<!--   </servlet-mapping> -->
 </web-app>
