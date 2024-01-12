@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" id="WebApp_ID" version="6.0">
+  <display-name>SimpleServletProject</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description>A simple servlet</description>
+    <display-name>SimpleServlet</display-name>
+    <servlet-name>SimpleServlet</servlet-name>
+    <servlet-class>org.koushik.javabrains.SimpleServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SimpleServlet</servlet-name>
+    <url-pattern>/SimpleServletPath</url-pattern>
+  </servlet-mapping>
+</web-app>
