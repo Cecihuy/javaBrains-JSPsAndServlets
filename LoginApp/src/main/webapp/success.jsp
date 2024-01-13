@@ -11,9 +11,9 @@
 </head>
 <body>
 	<h3>Login Successfull!!!</h3>
-	<%
-		User user = (User) request.getAttribute("user");
-	%>
-	Hello <%= user.getUserName() %>
+	<jsp:useBean id="user" class="org.koushik.javabrains.dto.User" scope="request">
+		<jsp:setProperty property="userName" name="user" value="New User" />
+	</jsp:useBean>
+	Hello <jsp:getProperty property="userName" name="user"/>
 </body>
 </html>
