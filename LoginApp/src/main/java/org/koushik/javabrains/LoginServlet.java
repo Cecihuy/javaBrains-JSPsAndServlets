@@ -6,6 +6,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import org.koushik.javabrains.dto.User;
 import org.koushik.javabrains.service.LoginService;
 
 @WebServlet(urlPatterns = "/login")
@@ -20,6 +21,7 @@ public class LoginServlet extends HttpServlet {
 		LoginService loginService = new LoginService();
 		boolean result = loginService.authenticate(userId, password);
 		if(result) {
+			User user = loginService.getUserDetails(userId);
 			response.sendRedirect("success.jsp");
 			return;
 		} else {
