@@ -8,7 +8,7 @@
 </head>
 <body>
 	<jsp:useBean id="user" class="org.koushik.javabrains.dto.User" scope="request">
-		<jsp:setProperty property="userName" name="user" param="userName" />
+		<jsp:setProperty property="*" name="user" />
 		Hello <jsp:getProperty property="userName" name="user" />
 	</jsp:useBean>
 </body>
