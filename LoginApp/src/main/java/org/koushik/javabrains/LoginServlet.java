@@ -1,4 +1,5 @@
 package org.koushik.javabrains;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -22,8 +23,9 @@ public class LoginServlet extends HttpServlet {
 		boolean result = loginService.authenticate(userId, password);
 		if(result) {
 			User user = loginService.getUserDetails(userId);
-			request.getSession().setAttribute("user", user);
-			response.sendRedirect("success.jsp");
+			request.setAttribute("user", user);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("success.jsp");
+			dispatcher.forward(request, response);
 			return;
 		} else {
 			response.sendRedirect("login.jsp");

@@ -12,7 +12,7 @@
 <body>
 	<h3>Login Successfull!!!</h3>
 	<%
-		User user = (User) session.getAttribute("user");
+		User user = (User) request.getAttribute("user");
 	%>
 	Hello <%= user.getUserName() %>
 </body>
