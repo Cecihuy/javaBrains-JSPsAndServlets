@@ -1,6 +1,7 @@
 package org.koushik.javabrains;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebInitParam;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -9,7 +10,9 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(description = "A simple servlet", urlPatterns = "/AdvancedServlet")
+//@WebServlet(description = "A simple servlet", urlPatterns = "/AdvancedServlet"
+//			, initParams = @WebInitParam(name = "defaultUser", value = "John Doe in annotation")
+//)
 public class SimpleServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -25,6 +28,7 @@ public class SimpleServlet extends HttpServlet {
 		}		
 		writer.println("Request parameter has username as " + uName + "<br>");
 		writer.println("Session parameter has username as " + (String)session.getAttribute("savedUserName") + "<br>");
-		writer.println("Context parameter has username as " + (String)context.getAttribute("savedUserName"));
+		writer.println("Context parameter has username as " + (String)context.getAttribute("savedUserName") + "<br>");
+		writer.println("Init parameter has default username as " + getServletConfig().getInitParameter("defaultUser") + "<br>");
 	}
 }
