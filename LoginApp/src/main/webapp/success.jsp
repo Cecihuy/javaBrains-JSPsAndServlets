@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"
+    import="org.koushik.javabrains.dto.User"
+%>
+   
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,5 +11,9 @@
 </head>
 <body>
 	<h3>Login Successfull!!!</h3>
+	<%
+		User user = (User) session.getAttribute("user");
+	%>
+	Hello <%= user.getUserName() %>
 </body>
 </html>
