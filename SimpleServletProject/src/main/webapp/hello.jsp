@@ -1,1 +1,0 @@
-Hello user! from hello.jsp file
