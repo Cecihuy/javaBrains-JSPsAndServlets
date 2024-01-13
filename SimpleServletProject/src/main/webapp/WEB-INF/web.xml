@@ -6,15 +6,15 @@
 		 id="WebApp_ID" version="6.0"
 		 >
   <servlet>
-    <servlet-name>SimpleServlet</servlet-name>
-    <servlet-class>org.koushik.javabrains.SimpleServlet</servlet-class>
+    <servlet-name>InitJsp</servlet-name>
+    <jsp-file>/initPage.jsp</jsp-file>
     <init-param>
     	<param-name>defaultUser</param-name>
-    	<param-value>John Doe in web xml</param-value>
+    	<param-value>Default User Name</param-value>
     </init-param>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>SimpleServlet</servlet-name>
-  	<url-pattern>/AdvancedServlet</url-pattern>
+  	<servlet-name>InitJsp</servlet-name>
+  	<url-pattern>/initPage.jsp</url-pattern>
   </servlet-mapping>
 </web-app>
